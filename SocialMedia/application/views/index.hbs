@@ -1,0 +1,20 @@
+       
+        <main id="main-content">
+          <section>
+        
+           {{#each posts}}
+           {{log this}}
+           <a href="/posts/{{this.id}}">
+            <div class="picture">
+               <img src="/{{this.thmbnails}}" type="img.png" class="photo-img"></img>
+               <center class="title" name="title" id="title" class="photo-title">{{this.title}}</center>
+             
+             </div>
+             </a>
+           {{/each}}
+          
+    
+          </section>
+        </main>
+   
+   

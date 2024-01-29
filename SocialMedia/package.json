@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express-flash": "^0.0.2",
+    "express-mysql-session": "^3.0.0",
+    "express-session": "^1.17.3"
+  }
+}

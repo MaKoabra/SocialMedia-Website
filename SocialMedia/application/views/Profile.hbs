@@ -1,0 +1,30 @@
+
+    <body>
+        
+        <main id="main-content">
+            <div class="container">
+            <h2>Profile</h2>
+            <div class="PerInfo">
+            <h3>User Info:</h3>
+                <p class="ProfileName"> Username:{{user.username}}</p>
+                <p class="ProfileEmail"> Email:{{user.email}}</p>
+           <h1>Your Posts:</h1>
+
+             {{#each posts}}
+           {{log this}}
+            <div class="product-card">
+                <a href="/posts/{{this.id}}">
+               <img src="/{{this.thmbnails}}" type="img.png" class="photo-img"></img>
+               <p class="title" name="title" id="title">{{this.title}}</p>
+              </a>
+              <form action="/posts/delete/{{this.id}}" method="post" enctype="application/x-www-form-urlencoded">
+                    <button type="submit" class="Logout">delete</button>  
+                    </form>
+             </div>
+           {{/each}}
+        </div>
+        </div>
+        </main>
+        
+       
+    </body>

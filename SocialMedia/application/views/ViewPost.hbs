@@ -1,0 +1,77 @@
+
+        <main id="main-content">
+
+            {{log this}}
+            <div class="container">
+            <div class="Videos">
+            <label for="Video"><h1>Viewing: {{currentPost.title}}</13></label>
+            <video height="500px" width="700px" controls>
+            <source src="/{{currentPost.video}}" type="video/mp4">
+            <video>
+        </div>
+
+        <div class="Description">
+            <p>{{currentPost.username}}</p>
+            <p>{{formatDateString currentPost.createdAt}}</p>
+            <p>{{currentPost.description}}</p>
+        </div>
+        <label for="Comments"><h3>Comments</h3></label>
+         {{#each currentPost.comments}}
+            <div class="Comments" id="comments">
+              
+               <p> {{this.username}}</p>
+               <p> {{formatDateString this.createdAt}}</p>
+               <p> {{this.text}}</p>
+               
+                
+            </div>
+             {{/each}}
+            
+             <label for="CommentsEdit">Write Comments Below:</label>
+            <div class="comment-box">
+                 <textarea id="comment-text" class="Commentsedit"></textarea>
+                <button aria-hidden="true" value="comment" class="Logout" id="CommentButton" data-postid="{{currentPost.id}}">Send</button>
+            </div>   
+            </div>
+
+            <script>
+    document.getElementById("CommentButton").addEventListener('click', function(ev){
+    console.log("Click was detected");
+    let commentText = document.getElementById("comment-text").value;
+    var comments= document.getElementById("comments")
+    if(!commentText) return;
+    var postId = ev.currentTarget.dataset.postid;
+
+    fetch("/comments/create",{
+        method: "POST",
+        headers: {
+            "Content-type" : "application/json"
+        },
+
+        body: JSON.stringify({
+             postId: postId,
+             comment: commentText
+        }
+        )
+    })
+    .then(response => response.json())
+ 
+    .then(data => {
+        var comments = document.getElementById('comments');
+        let commentFragment = document.createElement('template');
+        commentFragment.innerHTML=
+        `<div class="Comments" id="comments">      
+            <p> ${data.username}</p>
+            <p> ${(new Date()).toLocaleString("en-us",{
+                dateStyle:"long",
+                timeStyle:"medium" })}</p>
+            <p> ${data.commentText}</p>
+            </div>`;
+            comments.append(commentFragment.content.firstChild);
+
+})
+})
+</script>
+
+        </main>
+         

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" contents="width=device-width, intial-scale=1.0"/>
+        <link rel="stylesheet" href="../css/style.css">
+        <script defer src="../js/validation.js"></script>
+        <title>Document</title>
+        
+    </head>
+    <body>
+    
+        <header class="NavHead"  >
+            <a href="Index.html"><h3> CSC 317 Website</h3></a>
+            <nav class="NavHead">
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="Registration.html">Register</a></li>
+                    <li><a href="PostVideo.html">PostVideo</a></li>
+                    <li><a href="ViewPost.html">ViewPost</a></li>
+                    <li><a href="Profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main>
+            <div class="container">
+            <h2>Register:</h2>
+            <p>Please fill the form below to create an account</p>
+
+            <form id="RegistrationForm">
+                <label for="username">Username</label>
+                <input type="username" name="username" id="username"
+                placeholder="Enter Username" class="username" required>
+                <div id="UserDiv" class="Alert">
+
+                </div>
+
+                <label for="Email:" >Email</label>
+                <input type="text" name="email" id="email"
+                placeholder="Enter Email" class="Email" required>
+                <div></div>
+
+                <label for="Password:">Password</label>
+
+                <input type="password" name="password" id="password"
+                placeholder="Enter Password" class="Password" required>
+
+                <div id="PassDiv" class="Alert"></div>
+
+                <input type="password" name="Rpassword" id="passR"
+                placeholder="Repeat Password" class="Password" required>
+
+                <div id="RPass" class="Alert"></div>
+
+            
+                <label for="AgeConsent">Checking the box confirms you are older than 13+</label>
+                <input type="checkbox" name="AgeConsent" id="AgeConsent" class="Check"
+                placeholder="Checking the box confirms you are older than 13+"required>
+
+                <label for="Terms">Checking the box means you agree with <a href="https://fakeimg.pl/300/">TOS and Privacy</a> Conditions</label>
+                <input type="checkbox" name="Terms&Conditions" id="Terms&Conditions" class="Check"
+                placeholder="Checking the box means you agree with TOS & Privacy Conditions" required>
+                <input type= "submit" value="Register" placeholder="Register" class="Submit">
+            </form>
+            <h4 id="message">Welcome To Form Submission Page.</h4>
+        </div>
+        
+        </main>
+        <footer class="Feet">
+
+            Steven K M Brandt copyright:2023 
+        </footer>
+    </body>
+</html>

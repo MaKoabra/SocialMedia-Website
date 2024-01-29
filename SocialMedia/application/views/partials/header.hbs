@@ -1,0 +1,28 @@
+<header class="NavHead"  >
+            <a href="/"><h3> CSC 317 Website</h3></a>
+            <nav class="NavHead">
+                
+                <ul>
+                <form action="/posts/search" method="get" enctype="application/x-www-form-urlencoded">
+                    
+                    <input type="text" id="searchbar"  name="searchValue">   
+                   <li> <button type="submit" class="Logout">Search</button> </li>
+                    </form>
+                    
+                    <li><a href="/">Home</a></li>
+                    {{#if isLoggedIn}} 
+                    <li><a href="/PostVideo">PostVideo</a></li>
+                    <li><a href="/users/Profile/{{user.userId}}">Profile</a></li>
+                    <li> <form action="/users/Logout", method="post">
+                             <button type= "submit" id="Logout" value="Logout" class="Logout">Logout</button>
+                    </form>
+                    </li>
+                    <li><p class="nameU"> Welcome, {{user.username}}</p></li>
+                    {{else}}
+                    <li><a href="/Registration">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                    {{/if}}
+                    
+                </ul>
+            </nav>
+        </header>

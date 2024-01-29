@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" contents="width=device-width, intial-scale=1.0"/>
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Document</title>
+        
+    </head>
+    <body>
+        <header class="NavHead"  >
+            <a href="Index.html"><h3> CSC 317 Website</h3></a>
+            <nav class="NavHead">
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="Registration.html">Register</a></li>
+                    <li><a href="PostVideo.html">PostVideo</a></li>
+                    <li><a href="ViewPost.html">ViewPost</a></li>
+                    <li><a href="Profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>Post Your Videos Here:</h2>
+            <form action="">
+
+                <label for="title">Title </label>
+                <input type="text" name="Title" id="Title" placeholder="Title for Video">
+
+                <label for="PostVideos">PostVideos</label>
+                <input type="file" name="Videos" id="Videos" placeholder="PostVideos" accept="html">
+
+                <label for="Description">Description</label>
+                <textarea name="Description" id="Description" cols="30" rows="10"></textarea>
+
+                <p>Checking the box means you agree with <a href="https://fakeimg.pl/300/">Acceptable Use Policy</a></p>
+                <input type="checkbox" name="Acceptable Use Policys" id="Acceptable Use Policy" 
+                placeholder="Checking the box means you agree with Acceptable Use Policy" required>
+                <input type= "submit" value="submit">
+            </form>
+        </main>
+        <footer class="Feet">
+
+            Steven K M Brandt copyright:2023 
+        </footer>
+    </body>
+</html>
